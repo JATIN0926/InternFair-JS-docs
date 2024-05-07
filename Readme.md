@@ -1,3 +1,5 @@
 hello !! Testing for code snippets
 
-`console.log('Hello, world!');`
+```javascript
+console.log("Hello, world!");
+```
