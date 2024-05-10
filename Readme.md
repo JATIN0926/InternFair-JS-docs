@@ -655,6 +655,8 @@ function greet() {
 
 ## Exercise Time!
 
+# Exercise Time!
+
 _Note:_ Challenge yourself by attempting to solve these questions on your own before peeking at the answers! It's a great way to test your understanding and strengthen your problem-solving skills
 
 **1. Question:** What will be the output of the code snippet?
