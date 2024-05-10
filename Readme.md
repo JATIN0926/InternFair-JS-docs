@@ -345,7 +345,7 @@ multi-line comment
 */
 ```
 
-**Logical Operators**
+### Logical Operators
 
 Logical operators are used to perform logical operations on boolean values. JavaScript supports three main logical operators: `&&` (AND), `||` (OR), and `!` (NOT).
 
@@ -372,7 +372,7 @@ const value = false;
 console.log(!value); // Output: true
 ```
 
-**Assignment Operators**
+### Assignment Operators
 
 Assignment operators are used to assign values to variables. In JavaScript, the basic assignment operator is `=`. Additionally, there are compound assignment operators like `+=`, `-=`.
 
@@ -393,7 +393,7 @@ b -= 5; // equivalent to b = b - 5
 console.log(b); // Output: 5
 ```
 
-**Bitwise Operators**
+### Bitwise Operators
 
 Bitwise operators perform operations on the binary representation of numeric values.
 
@@ -651,7 +651,9 @@ function greet() {
 }
 ```
 
-**Exercise Time!**
+### Exercise Time!
+
+## Exercise Time!
 
 _Note:_ Challenge yourself by attempting to solve these questions on your own before peeking at the answers! It's a great way to test your understanding and strengthen your problem-solving skills
 
