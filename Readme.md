@@ -1187,7 +1187,7 @@ if (result === true) {
 
 # What is DOM ?
 
-The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML document as a tree-like structure, where each node represents an element (such as a <div> or <p>) or an attribute of the document. The DOM provides a way for JavaScript to interact with and manipulate the structure, content, and style of web pages.
+The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML document as a tree-like structure, where each node represents an element or an attribute of the document. The DOM provides a way for JavaScript to interact with and manipulate the structure, content, and style of web pages.
 
 **Example HTML Document**
 
@@ -1226,7 +1226,7 @@ console.log(container); // Output: <div id="container">...</div>
 
 So , certain methods to select HTML elements are as follows :
 
-### `document.getElementById()`
+### document.getElementById()`
 
 The `getElementById()` method returns the element that has the specified ID attribute.
 
@@ -1235,7 +1235,7 @@ const container = document.getElementById("container");
 console.log(container); // Output: <div id="container">...</div>
 ```
 
-### `document.getElementsByClassName()`
+### document.getElementsByClassName()
 
 The `getElementsByClassName()` method returns a collection of all elements in the document with the specified class name.
 
@@ -1244,7 +1244,7 @@ const paragraphs = document.getElementsByClassName("content");
 console.log(paragraphs); // Output: HTMLCollection [ <p class="content">...</p> ]
 ```
 
-### `document.getElementsByTagName()`
+### document.getElementsByTagName()
 
 The `getElementsByTagName()` method returns a collection of all elements in the document with the specified tag name.
 
@@ -1253,7 +1253,7 @@ const headings = document.getElementsByTagName("h1");
 console.log(headings); // Output: HTMLCollection [ <h1>Welcome to DOM Manipulation</h1> ]
 ```
 
-### `document.querySelector()`
+### document.querySelector()
 
 The `querySelector()` method returns the first element that matches a specified CSS selector in the document.
 
@@ -1262,7 +1262,7 @@ const button = document.querySelector("#btn");
 console.log(button); // Output: <button id="btn">Click me!</button>
 ```
 
-### `document.querySelectorAll()`
+### document.querySelectorAll()
 
 The `querySelectorAll()` method returns a static (not live) NodeList representing a list of elements that match the specified group of selectors.
 
