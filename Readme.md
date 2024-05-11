@@ -115,6 +115,25 @@ let person = { name: "John", age: 30 };
 let book = { title: "JavaScript Basics", pages: 100 };
 ```
 
+### Creation of Objects
+
+You can create objects in JavaScript using either object literal notation `{}` or the `Object()` constructor.
+
+```javascript
+// Using object literal notation
+let person = {
+  name: "John",
+  age: 30,
+  city: "New York",
+};
+
+// Using Object() constructor
+let car = new Object();
+car.make = "Toyota";
+car.model = "Corolla";
+car.year = 2020;
+```
+
 ## Accessing Object Properties
 
 You can access the values of object properties in JavaScript using dot notation or bracket notation.
@@ -133,6 +152,18 @@ In bracket notation, you use square brackets `([])` with the property name enclo
 
 ```javascript
 console.log(book["title"]); // Output: JavaScript Basics
+```
+
+### Adding and Deleting Object Properties
+
+You can add new properties to an object or delete existing ones using the assignment operator `(=)` or the `delete` keyword, respectively.
+
+```javascript
+// Adding a new property
+person.job = "Developer";
+
+// Deleting an existing property
+delete car.year;
 ```
 
 ### Special Data Types and Exceptions
@@ -657,7 +688,7 @@ function greet() {
 
 # Exercise Time!
 
-_Note:_ Challenge yourself by attempting to solve these questions on your own before peeking at the answers! It's a great way to test your understanding and strengthen your problem-solving skills
+**Note:** Challenge yourself by attempting to solve these questions on your own before peeking at the answers! It's a great way to test your understanding and strengthen your problem-solving skills
 
 **1. Question:** What will be the output of the code snippet?
 
@@ -700,3 +731,542 @@ The output of the code snippet will be `20`. Here's the explanation:
 - The `add` function adds its two parameters (`2` and `3`) and returns the result `5`.
 - The `multiply` function multiplies its two parameters (result of `add(2, 3)` and `4`) and returns the result `20`.
 - Therefore, `result` is assigned the value `20`, which is then logged to the console.
+
+# JavaScript Scope and Closures
+
+Scope and closures are fundamental concepts in JavaScript that determine the accessibility and lifetime of variables and functions within a program.
+
+## Variable Scope
+
+Variable scope refers to the region of code where a variable is accessible. In JavaScript, variables can have either global or local scope.
+
+### Global Scope
+
+Variables declared outside of any function have global scope, meaning they can be accessed from anywhere in the code.
+
+```javascript
+let globalVar = "I am a global variable";
+
+function foo() {
+  console.log(globalVar); // Output: I am a global variable
+}
+
+foo();
+```
+
+### Function Scope
+
+Variables declared within a function have function scope, meaning they are accessible only within that function.
+
+```javascript
+function foo() {
+  let localVar = "I am a local variable";
+  console.log(localVar); // Output: I am a local variable
+}
+
+foo();
+console.log(localVar); // Error: localVar is not defined
+```
+
+### Lexical Scope
+
+Lexical scope refers to the ability of nested functions to access variables defined in their outer scope. JavaScript uses lexical scoping, also known as _static_ scoping.
+
+```javascript
+function outerFunction() {
+  let outerVar = "I am from outer function";
+  function innerFunction() {
+    console.log(outerVar); // Output: I am from outer function
+  }
+  innerFunction();
+}
+
+outerFunction();
+```
+
+### Closures
+
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+**or**
+
+Closures occur when an inner function retains access to variables from its outer scope even after the outer function has finished executing. They are formed when a function is defined within another function.
+
+```javascript
+function outerFunction() {
+  let outerVar = "I am from outer function";
+  function innerFunction() {
+    console.log(outerVar); // Output: I am from outer function
+  }
+  return innerFunction;
+}
+
+let innerFunc = outerFunction();
+innerFunc();
+```
+
+#### Explanation
+
+- The `outerFunction` is defined, which declares a variable `outerVar` and defines an inner function `innerFunction`.
+- Within `outerFunction`, `innerFunction` is defined. This inner function has access to the variable `outerVar` due to lexical scoping rules in JavaScript.
+- `outerFunction` returns the `innerFunction`. This means that the `innerFunction` retains access to the `outerVar` variable even after `outerFunction` has finished executing. This is the concept of closure.
+- The returned `innerFunction` is assigned to the variable `innerFunc`.
+- `innerFunc` is then called, which executes the `innerFunction` code.
+- The `innerFunction` prints the value of `outerVar` to the console, which is `"I am from outer function"`.
+
+In summary, the code demonstrates how inner functions can retain access to variables from their outer scope, even after the outer function has finished executing. This concept of closure allows for powerful and flexible programming patterns in JavaScript.
+
+# Working with Arrays
+
+Arrays and objects are fundamental data structures in JavaScript that allow for the storage and manipulation of data.
+
+### Creating Arrays
+
+Arrays in JavaScript can be created using square brackets `[]` and can hold elements of any data type.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let fruits = ["apple", "banana", "orange"];
+```
+
+### Accessing Array Elements
+
+Array elements can be accessed using square brackets `[]` with the index of the element.
+
+```javascript
+console.log(numbers[0]); // Output: 1
+console.log(fruits[1]); // Output: banana
+```
+
+### Adding and Removing Elements
+
+Elements can be added to the end of an array using the `push` method and removed using the `pop` method . These are inbuild methods in Javascript. Unlike other languages , You don't have to define it externally.
+
+```javascript
+fruits.push("grape"); // Adds 'grape' to the end of the array
+console.log(fruits); // Output: ['apple', 'banana', 'orange', 'grape']
+
+fruits.pop(); // Removes the last element from the array
+console.log(fruits); // Output: ['apple', 'banana', 'orange']
+```
+
+## Array Methods in JavaScript
+
+Below are detailed explanations of various array methods in JavaScript, along with examples and indications of whether they modify the original array or not:
+
+### 1. `toString` Method (Does Not Modify):
+
+The `toString` method converts an array to a string of comma-separated values.
+
+```javascript
+let fruits = ["apple", "banana", "orange"];
+let result = fruits.toString();
+console.log(result); // Output: apple,banana,orange
+```
+
+### 2. `join` Method (Does Not Modify):
+
+The `join` method joins all elements of an array into a string.
+
+```javascript
+let fruits = ["apple", "banana", "orange"];
+let result = fruits.join(" | ");
+console.log(result); // Output: apple | banana | orange
+```
+
+### 3. `shift` Method (Modifies):
+
+The `shift` method removes the first element from an array and returns that removed element.
+
+```javascript
+let fruits = ["apple", "banana", "orange"];
+let removedElement = fruits.shift();
+console.log(removedElement); // Output: apple
+console.log(fruits); // Output: ['banana', 'orange']
+```
+
+### 4. `unshift` Method (Modifies):
+
+The unshift method adds one or more elements to the beginning of an array and returns the new length of the array.
+
+```javascript
+let fruits = ["banana", "orange"];
+let newLength = fruits.unshift("apple");
+console.log(newLength); // Output: 3
+console.log(fruits); // Output: ['apple', 'banana', 'orange']
+```
+
+### 5. `delete` Operator (Modifies):
+
+The `delete` operator removes a specified element from an array but leaves a hole in the array.
+
+```javascript
+let fruits = ["apple", "banana", "orange"];
+delete fruits[1];
+console.log(fruits); // Output: ['apple', empty, 'orange']
+```
+
+Yes there will be no `fruits.delete()` , delete is used like this only!
+
+### 6. `concat` Method (Does Not Modify):
+
+The `concat` method merges two or more arrays and returns a new array.
+
+```javascript
+let fruits1 = ["apple", "banana"];
+let fruits2 = ["orange", "grape"];
+let result = fruits1.concat(fruits2);
+console.log(result); // Output: ['apple', 'banana', 'orange', 'grape']
+```
+
+### 7. `slice` Method (Does Not Modify):
+
+The `slice` method returns a shallow copy of a portion of an array into a new array object.
+
+```javascript
+let fruits = ["apple", "banana", "orange", "grape"];
+let result = fruits.slice(1, 3); //3 excluded , content from index 1 to 2 will be there in output
+console.log(result); // Output: ['banana', 'orange']
+```
+
+JavaScript provides several built-in methods for working with arrays, including `forEach`, `map`, `filter`, `reduce`, etc.
+
+### 8. `splice` Method (Modifies):
+
+The `splice` method changes the contents of an array by removing or replacing existing elements and/or adding new elements.
+
+```javascript
+let fruits = ["apple", "banana", "orange", "grape"];
+
+// Starting at index 1 (banana), remove 2 elements (banana and orange)
+// and insert 'kiwi' and 'melon' in their place
+fruits.splice(1, 2, "kiwi", "melon");
+
+console.log(fruits); // Output: ['apple', 'kiwi', 'melon', 'grape']
+```
+
+### 9. `reverse` Method (Modifies):
+
+The `reverse` method reverses the elements of an array in place.
+
+```javascript
+let fruits = ["apple", "banana", "orange", "grape"];
+fruits.reverse();
+console.log(fruits); // Output: ['grape', 'orange
+```
+
+## Modern Array Methods
+
+Some Very Useful methods are there in javascript and you will use them a lot of time in your projects , That's why it is presented here in a different section
+
+### 1. `map` Method (Does Not Modify):
+
+The `map()` method creates a new array by applying a provided function to each element of the original array.
+
+```javascript
+let newArray = array.map(callback(currentValue, index , array) {
+  // return modified value
+});
+```
+
+- `callback` : A function to execute on each element.
+- `currentValue` : The current element being processed in the array.
+- `index`(optional) : The index of the current element being processed.
+- `array`(optional) : The array `map()` was called upon.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let doubledNumbers = numbers.map(function (number) {
+  return number * 2;
+});
+console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+```
+
+### 2. `filter` Method (Does Not Modify):
+
+The `filter()` method creates a new array with all elements that pass a test implemented by the provided function.
+
+```javascript
+let newArray = array.filter(callback(currentValue, index, array) {
+  // return true to keep the element, false otherwise
+});
+```
+
+- `callback` : A function to execute on each element.
+- `currentValue` : The current element being processed in the array.
+- `index`(optional) : The index of the current element being processed.
+- `array`(optional) : The array `filter()` was called upon.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let evenNumbers = numbers.filter(function (number) {
+  return number % 2 === 0;
+});
+console.log(evenNumbers); // Output: [2, 4]
+```
+
+### 3. `reduce` Method (Does Not Modify):
+
+The `reduce()` method applies a function against an accumulator and each element in the array to reduce it to a single value.
+
+```javascript
+let result = array.reduce(
+  callback(accumulator, currentValue, index, array),
+  initialValue
+);
+```
+
+- `callback` : A function to execute on each element.
+- `accumulator`: The accumulator accumulates the callback's return values.
+- `currentValue` : The current element being processed in the array.
+- `index`(optional) : The index of the current element being processed.
+- `array`(optional) : The array ` reduce()` was called upon.
+- `initialValue` (optional): A value to use as the first argument to the first call of the callback.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let sum = numbers.reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
+console.log(sum); // Output: 15
+```
+
+## Looping Through Arrays
+
+Arrays can be looped through using the classical Javascript for loop or through some other methods discussed below
+
+### 1. `forEach` Method:
+
+The `forEach()` method executes a provided function once for each array element.
+
+```javascript
+array.forEach(callback(currentValue , index , array) {
+  // function logic
+});
+```
+
+- `callback` : A function to execute on each element.
+- `currentValue` : The current element being processed in the array.
+- `index`(optional) : The index of the current element being processed.
+- `array`(optional) : The array `forEach()` was called upon.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+// forEach method
+numbers.forEach(function (number) {
+  console.log(number); // Output: 1, 2, 3, 4, 5
+});
+```
+
+### 2. `for...of` Loop:
+
+The `for...of` loop is used to iterate over iterable objects, such as arrays, strings, maps, sets, and more, to execute a block of code for each distinct element of the iterable.
+
+```javascript
+for (variable of iterable) {
+  // code block to be executed
+}
+```
+
+```javascript
+let fruits = ["apple", "banana", "orange"];
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+// Output:
+// apple
+// banana
+// orange
+```
+
+In this example, the `for...of` loop iterates over each element in the `fruits` array, assigning each element to the `fruit` variable, and then logs each `fruit` to the console.
+
+### 3. `for...in` Loop:
+
+The `for...in` loop is used to iterate over the properties of an object, including enumerable properties from the object's prototype chain.
+
+```javascript
+for (variable in object) {
+  // code block to be executed
+}
+```
+
+```javascript
+let person = { name: "John", age: 30, city: "New York" };
+
+for (let key in person) {
+  console.log(`${key}: ${person[key]}`);
+}
+// Output:
+// name: John
+// age: 30
+// city: New York
+```
+
+In this example, the `for...in` loop iterates over each property in the `person` object, assigning each property key to the `key` variable, and then logs the property key along with its corresponding value to the console.
+
+# Error Handling in JavaScript
+
+Error handling in JavaScript allows you to gracefully manage and recover from runtime errors or unexpected situations in your code.
+
+### `Try-Catch` Statement
+
+The `try...catch` statement is used to handle exceptions in JavaScript. You can wrap code that might throw an error inside a `try` block, and catch and handle any errors that occur in the corresponding `catch` block.
+
+```javascript
+try {
+  // Code that might throw an error
+  let result = someFunction();
+  console.log(result);
+} catch (error) {
+  // Code to handle the error
+  console.error("An error occurred:", error.message);
+}
+```
+
+### Error Objects
+
+JavaScript provides built-in error objects that represent different types of errors that can occur during the execution of your code. These error objects include `Error`, `SyntaxError`, `TypeError`, `ReferenceError`, and more.
+
+```javascript
+try {
+  // Code that might throw an error
+  throw new Error("Custom error message");
+} catch (error) {
+  // Code to handle the error
+  console.error("An error occurred:", error.message);
+}
+```
+
+In this example, if an error occurs within the `try` block or if the `throw` statement is explicitly called, the execution of the `try` block is interrupted, and the control is transferred to the `catch` block, where you can handle the error.
+
+The `throw` statement is used to throw a user-defined exception or a predefined JavaScript error. It interrupts the execution of the script. The `throws` keyword is not a part of JavaScript; it is typically used in function declarations to indicate the types of exceptions that the function may throw, but JavaScript itself does not enforce this.
+
+Error handling is an essential aspect of writing robust and reliable JavaScript code, especially when dealing with asynchronous operations, external APIs, or user input. Understanding how to use `try...catch` statements and error objects can help you write code that gracefully handles errors and prevents unexpected crashes.
+
+# Javascript in the browser
+
+Javascript was initially created to make web pages alive . JS can be written right in a web page's HTML to make it interactive .The browser has an embedded engine called the Javascript engine or the Javascript runtime.
+
+JavaScript' ability in the browser is very limited to protect the user's safety. for example a webpage on http://google.com Cannot Access http://codeswear.com and steal information from there
+
+## Interactivity with browser
+
+### `alert()`
+
+The `alert()` method displays a dialog box with a specified message and an OK button. It is commonly used to alert users about important information or to display error messages.
+
+```javascript
+alert("Hello, world!");
+```
+
+### `prompt()`
+
+The `prompt()` method displays a dialog box that prompts the user for input. It includes a text field where the user can enter data. The method returns the text entered by the user or `null` if the user clicks the Cancel button.
+
+```javascript
+const name = prompt("Please enter your name:", "John Doe"); // 2nd parameter is for default value
+console.log("Hello, " + name + "!");
+```
+
+### `confirm()`
+
+The `confirm()` method displays a dialog box with a message and two buttons: OK and Cancel. It is commonly used to ask users for confirmation before performing an action.
+
+```javascript
+const result = confirm("Are you sure you want to delete this item?");
+if (result === true) {
+  // Delete the item
+  console.log("Item deleted.");
+} else {
+  // Cancel the deletion
+  console.log("Deletion canceled.");
+}
+```
+
+# What is DOM ?
+
+The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML document as a tree-like structure, where each node represents an element (such as a <div> or <p>) or an attribute of the document. The DOM provides a way for JavaScript to interact with and manipulate the structure, content, and style of web pages.
+
+**Example HTML Document**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation Examples</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Welcome to DOM Manipulation</h1>
+      <p class="content">
+        This is a sample HTML document for DOM manipulation.
+      </p>
+      <button id="btn">Click me!</button>
+    </div>
+  </body>
+</html>
+```
+
+**note** : Go through this HTML Document , We will be using this document for further learnings with DOM
+
+## Accessing DOM Elements
+
+JavaScript provides several methods to access DOM elements, allowing you to select elements based on their ID, class, tag name, or relationship with other elements.
+
+### Example: Accessing Elements by ID
+
+```javascript
+const container = document.getElementById("container");
+console.log(container); // Output: <div id="container">...</div>
+```
+
+So , certain methods to select HTML elements are as follows :
+
+### `document.getElementById()`
+
+The `getElementById()` method returns the element that has the specified ID attribute.
+
+```javascript
+const container = document.getElementById("container");
+console.log(container); // Output: <div id="container">...</div>
+```
+
+### `document.getElementsByClassName()`
+
+The `getElementsByClassName()` method returns a collection of all elements in the document with the specified class name.
+
+```javascript
+const paragraphs = document.getElementsByClassName("content");
+console.log(paragraphs); // Output: HTMLCollection [ <p class="content">...</p> ]
+```
+
+### `document.getElementsByTagName()`
+
+The `getElementsByTagName()` method returns a collection of all elements in the document with the specified tag name.
+
+```javascript
+const headings = document.getElementsByTagName("h1");
+console.log(headings); // Output: HTMLCollection [ <h1>Welcome to DOM Manipulation</h1> ]
+```
+
+### `document.querySelector()`
+
+The `querySelector()` method returns the first element that matches a specified CSS selector in the document.
+
+```javascript
+const button = document.querySelector("#btn");
+console.log(button); // Output: <button id="btn">Click me!</button>
+```
+
+### `document.querySelectorAll()`
+
+The `querySelectorAll()` method returns a static (not live) NodeList representing a list of elements that match the specified group of selectors.
+
+```javascript
+const elements = document.querySelectorAll(".content");
+console.log(elements); // Output: NodeList [ <p class="content">...</p> ]
+```
