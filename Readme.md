@@ -52,7 +52,7 @@ console.log(`Hello ${a}!`);
 
 Try changing the value of name to your own name!
 
-#### Explanation:
+### Explanation:
 
 - The backticks (\`) are used to create template literals in JavaScript.
 - Inside a template literal, you can embed expressions using `${}` syntax.
@@ -183,11 +183,9 @@ let negativeInfinity = -Infinity;
 
 ## Resources for Data Types
 
-[![Video Thumbnail](https://img.youtube.com/vi/qpU3WIqRz9I/0.jpg)](https://youtu.be/qpU3WIqRz9I?si=LfxKqjlXMp3rxesV){:target="\_blank"}
+[![Video Thumbnail](https://img.youtube.com/vi/qpU3WIqRz9I/0.jpg)](https://youtu.be/qpU3WIqRz9I?si=LfxKqjlXMp3rxesV)
 
 # Understanding Variable Scope in JavaScript
-
----
 
 ## **let**, **var**, and **const**
 
@@ -244,11 +242,9 @@ Remember to choose the appropriate variable declaration based on the intended us
 
 ### Resources
 
-[![Video Thumbnail](https://img.youtube.com/vi/yY0bKZNYmJs/0.jpg)](https://youtu.be/yY0bKZNYmJs?si=zvAWn6UPObSxihUi){:target="\_blank"}
+[![Video Thumbnail](https://img.youtube.com/vi/yY0bKZNYmJs/0.jpg)](https://youtu.be/yY0bKZNYmJs?si=zvAWn6UPObSxihUi)
 
 # Operators
-
----
 
 Operators in JavaScript are symbols or keywords that perform operations on operands (variables or values). They are used to perform arithmetic, comparison, logical, and assignment operations
 
@@ -461,11 +457,11 @@ multi-line comment
 
 ### Resources for Operators
 
-[![Video Thumbnail](https://img.youtube.com/vi/lsV8JQgSW1s/0.jpg)](https://youtu.be/lsV8JQgSW1s?si=MZ4XQUaL69VQXbzf){:target="\_blank"}
+[![Video Thumbnail](https://img.youtube.com/vi/lsV8JQgSW1s/0.jpg)](https://youtu.be/lsV8JQgSW1s?si=MZ4XQUaL69VQXbzf)
 
-[![Video Thumbnail](https://img.youtube.com/vi/mesu75PTDC8/0.jpg)](https://youtu.be/mesu75PTDC8?si=Z0Xgu8vY7LUK7zvD){:target="\_blank"}
+[![Video Thumbnail](https://img.youtube.com/vi/mesu75PTDC8/0.jpg)](https://youtu.be/mesu75PTDC8?si=Z0Xgu8vY7LUK7zvD)
 
-### Conditional Statements (if-else, switch):
+# Conditional Statements (if-else, switch):
 
 Conditional statements are used to execute different actions based on different conditions.
 
@@ -482,6 +478,33 @@ if (x > 5) {
   console.log("x is not greater than 5");
 }
 ```
+
+### Ternary Operator
+
+The ternary operator, also known as the conditional operator, is a concise way to write conditional statements in JavaScript. It is often used as a shortcut for simple `if...else` statements.
+
+**Syntax**
+
+```md
+condition ? expressionIfTrue : expressionIfFalse
+```
+
+**Example**
+
+```javascript
+const age = 20;
+const message = age >= 18 ? "You are an adult" : "You are a minor";
+console.log(message); // Output: You are an adult
+```
+
+### Explanation
+
+In the example above:
+
+- The condition `age >= 18` checks if the age is greater than or equal to 18.
+- If the condition is true, the expression `'You are an adult'` is evaluated.
+- If the condition is false, the expression `'You are a minor'` is evaluated.
+- The result of the ternary operator is then assigned to the variable `message`.
 
 ### switch Statement:
 
@@ -512,11 +535,17 @@ The switch statement checks the value of `fruit` variable and executes the code 
 
 **Question:** What will be the output of the above code snippet? What happens if the fruit variable is set to "Banana"?
 
-### Loops (for, while, do-while):
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/s5Lu4QTjeL0/0.jpg)](https://youtu.be/s5Lu4QTjeL0?si=fRfiRRT2P0iYS3JG)
+
+[![Video Thumbnail](https://img.youtube.com/vi/SJPsOFfvEQA/0.jpg)](https://youtu.be/SJPsOFfvEQA?si=YhuKhdqNEbhLWq0b)
+
+# Loops (for, while, do-while):
 
 Loops are fundamental in programming as they allow us to execute a block of code repeatedly. JavaScript provides several types of loops, each with its own unique characteristics and use cases
 
-**for Loop**
+### for Loop
 
 The `for` loop is commonly used when the number of iterations is known or when iterating over arrays.
 
@@ -542,7 +571,7 @@ In the above example, the loop initializes i to 0, checks if i is less than 5, e
 4
 ```
 
-**while Loop**
+### while Loop
 
 The `while` loop is useful when the number of iterations is unknown but a condition needs to be met for the loop to continue.
 
@@ -564,7 +593,7 @@ The while loop checks the condition before each iteration. It executes the loop 
 
 And remember, if you find yourself accidentally creating an infinite loop, don't worry! It happens to the best of us. Take a moment to reflect, debug, and maybe even try intentionally creating one just to see what happens. Let your PC have some fun too!
 
-**do-while Loop**
+### do-while Loop
 
 The `do-while` loop is similar to the `while` loop, but it always executes the loop body at least once before checking the condition.
 
@@ -584,11 +613,17 @@ In the above example, the loop body is executed once before the condition `(i < 
 
 **Answer:** Unlike the while loop, the do-while loop always executes the loop body at least once, regardless of the condition's initial value.
 
-### Break and Continue Statements
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/XKyyM1VWtUE/0.jpg)](https://youtu.be/XKyyM1VWtUE?si=jQ__72E7GaspMG8a)
+
+[![Video Thumbnail](https://img.youtube.com/vi/drEjyBSu33w/0.jpg)](https://youtu.be/drEjyBSu33w?si=CSD1__KvIwsJ2gG_)
+
+# Break and Continue Statements
 
 `break` and `continue` statements are used to control the flow of loops. These are also called _Jump_ Statements
 
-**break Statement**
+### break Statement
 
 The break statement terminates the current loop, switch, or label statement and transfers program control to the statement following the terminated statement.
 
@@ -616,15 +651,42 @@ for (let i = 0; i < 10; i++) {
 - When `i` is `5`, the `break` statement is executed, which terminates the loop immediately.
 - Therefore, only the values of `i` from `0` to `4` are printed using `console.log(i)`.
 
-### JavaScript Functions
+### Continue Statement
+
+The `continue` statement is used within loops in JavaScript to skip the current iteration of the loop and proceed to the next iteration. It is commonly used to avoid executing certain code or processing specific elements within a loop.
+
+```javascript
+for (let i = 0; i < 5; i++) {
+  if (i === 2) {
+    continue; // Skip the current iteration when i is 2
+  }
+  console.log(i);
+}
+```
+
+### Explanation
+
+In the example above:
+
+- We have a for loop that iterates from 0 to 4.
+- Inside the loop, we use an if statement to check if the current value of i is 2.
+- If i is 2, the continue statement is executed, which skips the current iteration of the loop.
+- As a result, when i is 2, the console.log(i) statement is skipped, and the loop proceeds to the next iteration.
+- The output of the loop is 0, 1, 3, and 4.
+
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/Y1cpFsXrEgY/0.jpg)](https://youtu.be/Y1cpFsXrEgY?si=-m29Sh0C5KWXFXyp)
+
+# JavaScript Functions
 
 Functions are reusable blocks of code that perform a specific task or calculate a value. They allow for modular programming and help in organizing code for better readability and maintainability.
 
-**What are Functions?**
+### What are Functions?
 
 A function is a block of code that performs a specific task or calculates a value. It consists of a set of statements that are executed when the function is called. Functions can take inputs, known as parameters, and can optionally return a value.
 
-**Declaring Functions**
+### Declaring Functions
 
 A function in JavaScript can be declared using the `function` keyword followed by the function name, parentheses `()`, and curly braces `{}` to define the function body.
 
@@ -634,7 +696,7 @@ function greet() {
 }
 ```
 
-**Calling Functions**
+### Calling Functions
 
 To execute a function and perform its task, you need to call it by using its name followed by parentheses `()`.
 
@@ -642,7 +704,7 @@ To execute a function and perform its task, you need to call it by using its nam
 greet(); // Output: Hello, world!
 ```
 
-**Function Parameters**
+### Function Parameters
 
 Functions can accept inputs, called parameters, which are specified within the parentheses `()`. These parameters allow functions to perform tasks with different values.
 
@@ -654,7 +716,7 @@ function greet(name) {
 greet("Alice"); // Output: Hello, Alice!
 ```
 
-**Return Statement**
+### Return Statement
 
 A function can optionally return a value using the `return` statement. This allows the function to provide a result that can be used elsewhere in the code.
 
@@ -667,7 +729,7 @@ let result = add(3, 5);
 console.log(result); // Output: 8
 ```
 
-**Anonymous Functions**
+### Anonymous Functions
 
 Anonymous functions, also known as function expressions, are functions without a name. They are often used as arguments to other functions or assigned to variables.
 
@@ -679,7 +741,7 @@ let greet = function () {
 greet(); // Output: Hello, world!
 ```
 
-**Arrow Functions**
+### Arrow Functions
 
 Arrow functions provide a concise syntax for writing functions, especially when the function body consists of a single expression. They are denoted by the arrow `=>`and automatically bind this to the surrounding code.
 
@@ -696,11 +758,20 @@ function greet() {
 }
 ```
 
+### Immediately Invoked Function
+
+It is a JavaScript function that runs as soon as it defined. An `IIFE` (Immediately Invoked Function Expression) can be used for avoiding the variable hoisting from within the blocks. It allows the public access to methods while retaining the privacy for variables defined in the function.
+
+IIFE is a design pattern that is also known as the **Self-Executing Anonymous Function**.
+
+```javascript
+(function () {
+  const message = "Hello from IIFE!";
+  console.log(message);
+})();
+```
+
 ### Exercise Time!
-
-## Exercise Time!
-
-# Exercise Time!
 
 **Note:** Challenge yourself by attempting to solve these questions on your own before peeking at the answers! It's a great way to test your understanding and strengthen your problem-solving skills
 
@@ -745,6 +816,14 @@ The output of the code snippet will be `20`. Here's the explanation:
 - The `add` function adds its two parameters (`2` and `3`) and returns the result `5`.
 - The `multiply` function multiplies its two parameters (result of `add(2, 3)` and `4`) and returns the result `20`.
 - Therefore, `result` is assigned the value `20`, which is then logged to the console.
+
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/a_gwOwkbhZ0/0.jpg)](https://youtu.be/a_gwOwkbhZ0?si=QYyStZ3k3fBJculm)
+
+[![Video Thumbnail](https://img.youtube.com/vi/9ksqBa8_txM/0.jpg)](https://youtu.be/9ksqBa8_txM?si=A2ma6YuPBlXaQ8cJ)
+
+[![Video Thumbnail](https://img.youtube.com/vi/GAIbn16Iytc/0.jpg)](https://youtu.be/GAIbn16Iytc?si=VjkCnQc_Kf-bX9K8)
 
 # JavaScript Scope and Closures
 
@@ -819,7 +898,7 @@ let innerFunc = outerFunction();
 innerFunc();
 ```
 
-#### Explanation
+### Explanation
 
 - The `outerFunction` is defined, which declares a variable `outerVar` and defines an inner function `innerFunction`.
 - Within `outerFunction`, `innerFunction` is defined. This inner function has access to the variable `outerVar` due to lexical scoping rules in JavaScript.
@@ -829,6 +908,12 @@ innerFunc();
 - The `innerFunction` prints the value of `outerVar` to the console, which is `"I am from outer function"`.
 
 In summary, the code demonstrates how inner functions can retain access to variables from their outer scope, even after the outer function has finished executing. This concept of closure allows for powerful and flexible programming patterns in JavaScript.
+
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/cHHU0jXfjKY/0.jpg)](https://youtu.be/cHHU0jXfjKY?si=o-1zmddy9t1Rg5lI)
+
+[![Video Thumbnail](https://img.youtube.com/vi/VaH09NXQZ58/0.jpg)](https://youtu.be/VaH09NXQZ58?si=trX-hTjjx4bcZTXZ)
 
 # Working with Arrays
 
@@ -969,6 +1054,14 @@ fruits.reverse();
 console.log(fruits); // Output: ['grape', 'orange
 ```
 
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/a_Bz5ciBHQ0/0.jpg)](https://youtu.be/a_Bz5ciBHQ0?si=yFLFlXygpVXc1vDC)
+
+[![Video Thumbnail](https://img.youtube.com/vi/BLIrBThPTXc/0.jpg)](https://youtu.be/BLIrBThPTXc?si=RxjK1FPt5Y8HMd92)
+
+[![Video Thumbnail](https://img.youtube.com/vi/QxA-KB2lKgk/0.jpg)](https://youtu.be/QxA-KB2lKgk?si=1L9V48cgK1M-S1z7)
+
 ## Modern Array Methods
 
 Some Very Useful methods are there in javascript and you will use them a lot of time in your projects , That's why it is presented here in a different section
@@ -1045,6 +1138,10 @@ let sum = numbers.reduce(function (accumulator, currentValue) {
 console.log(sum); // Output: 15
 ```
 
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/bAUMuuRH99o/0.jpg)](https://youtu.be/bAUMuuRH99o?si=_5gUujs5s4lYKGZ2)
+
 ## Looping Through Arrays
 
 Arrays can be looped through using the classical Javascript for loop or through some other methods discussed below
@@ -1120,6 +1217,10 @@ for (let key in person) {
 
 In this example, the `for...in` loop iterates over each property in the `person` object, assigning each property key to the `key` variable, and then logs the property key along with its corresponding value to the console.
 
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/YWyr7Nug2oc/0.jpg)](https://youtu.be/YWyr7Nug2oc?si=E8wJlrGgy5O94WTM)
+
 # Error Handling in JavaScript
 
 Error handling in JavaScript allows you to gracefully manage and recover from runtime errors or unexpected situations in your code.
@@ -1158,6 +1259,12 @@ In this example, if an error occurs within the `try` block or if the `throw` sta
 The `throw` statement is used to throw a user-defined exception or a predefined JavaScript error. It interrupts the execution of the script. The `throws` keyword is not a part of JavaScript; it is typically used in function declarations to indicate the types of exceptions that the function may throw, but JavaScript itself does not enforce this.
 
 Error handling is an essential aspect of writing robust and reliable JavaScript code, especially when dealing with asynchronous operations, external APIs, or user input. Understanding how to use `try...catch` statements and error objects can help you write code that gracefully handles errors and prevents unexpected crashes.
+
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/WRNBQCl_cPU/0.jpg)](https://youtu.be/WRNBQCl_cPU?si=rYcMIKJl-dHXujt-)
+
+[![Video Thumbnail](https://img.youtube.com/vi/uOQBGKfldIg/0.jpg)](https://youtu.be/uOQBGKfldIg?si=xKzWPTI8GTsROrD3)
 
 # Javascript in the browser
 
@@ -1198,6 +1305,10 @@ if (result === true) {
   console.log("Deletion canceled.");
 }
 ```
+
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/540NIdeKW3I/0.jpg)](https://youtu.be/540NIdeKW3I?si=Wtyc_L0EuSkL7Gkw)
 
 # What is DOM ?
 
