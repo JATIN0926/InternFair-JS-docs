@@ -58,7 +58,7 @@ Try changing the value of name to your own name!
 - Inside a template literal, you can embed expressions using `${}` syntax.
 - When JavaScript encounters `${}`, it evaluates the expression inside the curly braces and includes the result in the string.
 
-### JavaScript Variables and Data Types
+## JavaScript Variables and Data Types
 
 Variables are used to store data values in JavaScript. JavaScript supports various data types, each serving different purposes. Majorly data types are :
 
@@ -70,7 +70,7 @@ Variables are used to store data values in JavaScript. JavaScript supports vario
 
 Let's explore the different data types and their key points:
 
-**Numbers**
+### Numbers
 
 JavaScript represents numbers using the number data type. Numbers can be integers , floating-point numbers or negative numbers.
 
@@ -79,7 +79,7 @@ let age = 25;
 let pi = 3.14;
 ```
 
-**Strings**
+### Strings
 
 Strings are sequences of characters enclosed within single quotes ('') or double quotes (""). Strings are immutable(cannot be modified once declared).
 
@@ -88,7 +88,7 @@ let name = "Alice";
 let message = "Hello, world!";
 ```
 
-**Booleans**
+### Booleans
 
 Booleans represent logical values: true or false. They are commonly used in conditional statements and logical expressions.
 
@@ -97,7 +97,7 @@ let isStudent = true;
 let isValid = false;
 ```
 
-**Arrays**
+### Arrays
 
 Arrays are ordered collections of values, each identified by an index. They can contain elements of different data types.
 
@@ -106,7 +106,7 @@ let numbers = [1, 2, 3, false, "yellow"];
 let colors = ["red", "green", "blue", true];
 ```
 
-**Objects**
+### Objects
 
 Objects are collections of key-value pairs, where keys are strings and values can be any data type.
 
@@ -134,7 +134,7 @@ car.model = "Corolla";
 car.year = 2020;
 ```
 
-## Accessing Object Properties
+### Accessing Object Properties
 
 You can access the values of object properties in JavaScript using dot notation or bracket notation.
 
@@ -180,6 +180,10 @@ let result = "hello" / 5; // NaN
 let positiveInfinity = Infinity;
 let negativeInfinity = -Infinity;
 ```
+
+## Resources for Data Types
+
+[![Video Thumbnail](https://img.youtube.com/vi/qpU3WIqRz9I&list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR&index=4/0.jpg)](<[VIDEO_URL_HERE](https://www.youtube.com/watch?v=qpU3WIqRz9I&list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR&index=4)>)
 
 ### Understanding Variable Scope in JavaScript
 
@@ -1226,7 +1230,7 @@ console.log(container); // Output: <div id="container">...</div>
 
 So , certain methods to select HTML elements are as follows :
 
-### document.getElementById()`
+### document.getElementById()
 
 The `getElementById()` method returns the element that has the specified ID attribute.
 
@@ -1269,4 +1273,556 @@ The `querySelectorAll()` method returns a static (not live) NodeList representin
 ```javascript
 const elements = document.querySelectorAll(".content");
 console.log(elements); // Output: NodeList [ <p class="content">...</p> ]
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Insertion Examples</title>
+  </head>
+  <body>
+    <div id="parent">
+      <h1>Parent Element</h1>
+      <p>This is the parent element.</p>
+      <div id="reference">Reference Element</div>
+      <div id="toReplace">Element to Replace</div>
+    </div>
+  </body>
+</html>
+```
+
+## Insertion Methods in DOM
+
+### innerText
+
+The `innerText` property sets or returns the text content of the specified node and all its descendants
+
+```javascript
+const element = document.getElementById("example");
+element.innerText = "New text content"; // Expected Output: The text content of the <h1> element is changed to "New text content"
+```
+
+### innerHTML
+
+The `innerHTML` property sets or returns the HTML content (including the HTML tags) of an element.
+
+```javascript
+const element = document.getElementById("example");
+element.innerHTML = "<b>New</b> HTML content"; // Expected Output: The HTML content of the <h1> element is changed to "<b>New</b> HTML content"
+```
+
+### appendChild
+
+The `appendChild()` method appends a node as the last child of a specified parent node.
+
+```javascript
+const parent = document.getElementById("parent");
+const child = document.createElement("div");
+child.textContent = "New child node";
+parent.appendChild(child); // Expected Output: A new <div> element with the text "New child node" is appended to the end of the parent element
+```
+
+### insertBefore
+
+The `insertBefore()` method inserts a node before a specified child node in the parent element.
+
+```javascript
+const parent = document.getElementById("parent");
+const newChild = document.createElement("div");
+newChild.textContent = "New child node";
+const referenceNode = document.getElementById("reference");
+parent.insertBefore(newChild, referenceNode); // Expected Output: A new <div> element with the text "New child node" is inserted before the element with ID "reference"
+```
+
+### insertAdjacentHTML
+
+The `insertAdjacentHTML()` method inserts HTML text as a child, before, or after the specified element.
+
+```javascript
+const element = document.getElementById("example");
+element.insertAdjacentHTML("beforeend", "<p>New HTML content</p>"); // Expected Output: A new <p> element with the text "New HTML content" is inserted as a child of the <h1> element
+```
+
+### createTextNode
+
+The `createTextNode()` method creates a new Text node with the specified text.
+
+```javascript
+const textNode = document.createTextNode("New text node");
+const parent = document.getElementById("parent");
+parent.appendChild(textNode); // Expected Output: A new Text node with the text "New text node" is appended to the parent element
+```
+
+# Event Handling in JavaScript
+
+Event handling in JavaScript allows you to respond to user interactions or system events in web applications. With event handling, you can execute JavaScript code in response to events such as clicks, keypresses, mouse movements, and more.
+
+## Adding Event Listeners
+
+The most common way to handle events in JavaScript is by adding event listeners to DOM elements. Event listeners "listen" for a specific event to occur on an element and execute a callback function when the event occurs.
+
+**syntax**
+
+```javascript
+element.addEventListener(eventType, callbackFunction);
+```
+
+**Example:**
+
+```javascript
+const button = document.getElementById("myButton");
+
+button.addEventListener("click", function () {
+  console.log("Button clicked!");
+});
+```
+
+### Event Object
+
+When an event occurs, JavaScript creates an event object that contains information about the event. This event object is passed to the event handler function as an argument, allowing you to access details such as the event type, target element, mouse coordinates, and more.
+
+```javascript
+document.addEventListener("click", function (event) {
+  console.log("Clicked at:", event.clientX, event.clientY);
+});
+```
+
+### Event Propagation
+
+In the DOM, events propagate or "bubble" from the target element to its ancestors. Additionally, events can also "capture" from the root of the document down to the target element. Understanding event propagation is crucial for handling events effectively, especially when dealing with nested elements.
+
+```javascript
+const parent = document.getElementById("parent");
+
+parent.addEventListener("click", function () {
+  console.log("Parent clicked!");
+});
+
+const child = document.getElementById("child");
+
+child.addEventListener("click", function (event) {
+  event.stopPropagation(); // Prevents event from bubbling up to parent
+  console.log("Child clicked!");
+});
+```
+
+### Removing Event Listeners
+
+To remove an event listener from an element, you can use the `removeEventListener()` method.
+
+**Syntax**
+
+```javascript
+element.removeEventListener(eventType, callbackFunction);
+```
+
+**Example**
+
+```javascript
+const button = document.getElementById("myButton");
+const handleClick = function () {
+  console.log("Button clicked!");
+};
+
+button.addEventListener("click", handleClick);
+
+// Later, remove the event listener
+button.removeEventListener("click", handleClick);
+```
+
+Certainly! When you define the callback function directly inside the `addEventListener` call, a new function is created every time the `addEventListener` line is executed. Even if the function has the same code, it's a different instance each time. Consequently, when you later call `removeEventListener`, you need to pass the exact same function instance that was originally added. If you define the function externally and then reference it in both `addEventListener` and `removeEventListener`, you're ensuring that the same function instance is used for both operations. This ensures that the event listener is removed successfully, preventing memory leaks and unexpected behavior.
+
+## Additional Events
+
+### 1. keydown
+
+The `keydown` event occurs when a key is pressed down.
+
+```javascript
+document.addEventListener("keydown", function (event) {
+  console.log("Key pressed:", event.key);
+});
+```
+
+### 2. submit
+
+The `submit` event occurs when a form is submitted.
+
+```javascript
+const form = document.getElementById("myForm");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevents the form from submitting
+  console.log("Form submitted!");
+});
+```
+
+Event handling in JavaScript provides a wide range of events that you can use to create interactive web applications. In addition to the events mentioned above, there are many more events available such as `mouseover`, `mouseout`, `focus`, `blur`, `change`, `scroll`, and more. Experiment with different events to enhance the interactivity and functionality of your web applications.
+
+# Asynchronous JavaScript
+
+### setTimeout
+
+`setTimeout` is a JavaScript function used to schedule a function or piece of code to run after a specified delay (in milliseconds).
+
+**Syntax**
+
+```javascript
+setTimeout is a JavaScript function used to schedule a function or piece of code to run after a specified delay (in milliseconds).
+```
+
+- **callback:** The function to execute after the delay.
+- **delay:** The number of milliseconds to wait before executing the callback.
+
+```javascript
+callback: The function to execute after the delay.
+delay: The number of milliseconds to wait before executing the callback.
+```
+
+### setInterval
+
+`setInterval` is a JavaScript function used to repeatedly execute a function or piece of code at specified intervals.
+
+```javascript
+let count = 0;
+function increment() {
+  count++;
+  console.log("Count:", count);
+}
+
+const intervalId = setInterval(increment, 1000); // Output: Count: 1, Count: 2, Count: 3, ...
+```
+
+### clearInterval
+
+To stop the repeated execution of `setInterval`, you can use the `clearInterval` function by passing the interval ID returned by setInterval.
+
+```javascript
+let count = 0;
+function increment() {
+  count++;
+  console.log("Count:", count);
+  if (count === 5) {
+    clearInterval(intervalId);
+  }
+}
+
+const intervalId = setInterval(increment, 1000); // Output: Count: 1, Count: 2, Count: 3, Count: 4, Count: 5
+```
+
+### Callback Functions
+
+Callback functions are functions that are passed as arguments to other functions and are executed later in response to some event or asynchronous operation completion.
+
+```javascript
+function fetchData(callback) {
+  // Simulate fetching data asynchronously
+  setTimeout(() => {
+    const data = "Data fetched!";
+    callback(data);
+  }, 1000);
+}
+
+function processData(data) {
+  console.log("Processing:", data);
+}
+
+fetchData(processData); // Output: Processing: Data fetched!
+```
+
+### Callback Hell
+
+Callback hell, also known as pyramid of doom, occurs when multiple nested callback functions are used, leading to code that is difficult to read and maintain.
+
+```javascript
+function fetchData(callback) {
+  setTimeout(() => {
+    const data = "Data fetched!";
+    callback(data);
+  }, 1000);
+}
+
+function processData(data, callback) {
+  setTimeout(() => {
+    const processedData = `${data} Processed!`;
+    callback(processedData);
+  }, 1000);
+}
+
+function displayData(data) {
+  console.log("Displaying:", data);
+}
+
+fetchData(function (data) {
+  processData(data, function (processedData) {
+    displayData(processedData);
+  });
+});
+```
+
+### Promises
+
+Promises provide a cleaner alternative to callbacks for handling asynchronous operations. They represent a value that may be available now, or in the future, or never.
+
+```javascript
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    // Simulate fetching data asynchronously
+    setTimeout(() => {
+      const data = "Data fetched!";
+      resolve(data);
+    }, 1000);
+  });
+}
+
+function processData(data) {
+  return new Promise((resolve, reject) => {
+    // Simulate processing data asynchronously
+    setTimeout(() => {
+      const processedData = `${data} Processed!`;
+      resolve(processedData);
+    }, 1000);
+  });
+}
+
+fetchData()
+  .then(processData)
+  .then((data) => {
+    console.log("Displaying:", data); // Output: Displaying: Data fetched! Processed!
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+```
+
+### Explanation:
+
+1. **`fetchData` Function:**
+
+   - This function simulates fetching data asynchronously.
+   - It returns a `Promise` object.
+   - Inside the `Promise` constructor, there's a function with two arguments: `resolve` and `reject`.
+   - Inside the function, there's a `setTimeout` function that waits for 1000 milliseconds (1 second) before executing its callback.
+   - After 1000 milliseconds, it resolves the promise with the string `'Data fetched!'`.
+
+2. **`processData` Function:**
+
+   - This function simulates processing the fetched data asynchronously.
+   - It also returns a `Promise` object.
+   - Similar to `fetchData`, it has a `setTimeout` function inside the `Promise` constructor.
+   - After 1000 milliseconds, it resolves the promise with the processed data, which is the original data concatenated with the string `' Processed!'`.
+
+3. **Promise Chain:**
+
+   - We call the `fetchData` function, which returns a promise.
+   - We chain a `.then()` method to the promise returned by `fetchData`.
+   - Inside the `.then()` method, we pass the `processData` function as a callback.
+   - This means that when the data is successfully fetched (promise resolved), the `processData` function will be called with the fetched data.
+   - The `processData` function returns another promise, which allows us to chain another `.then()` method.
+   - Inside the second `.then()` method, we log the processed data to the console.
+   - We also chain a `.catch()` method to handle any errors that might occur during the process.
+
+4. **Error Handling:**
+   - If an error occurs at any stage of the promise chain (either during data fetching or processing), it will be caught by the `.catch()` method.
+   - In this example, we simply log the error message to the console using `console.error()`.
+
+### Async/Await
+
+Async functions and the await keyword provide a more concise and synchronous-looking way to work with promises. Async functions implicitly return a promise and can use the await keyword to wait for the resolution of another promise.
+
+```javascript
+async function fetchData() {
+  return new Promise((resolve, reject) => {
+    // Simulate fetching data asynchronously
+    setTimeout(() => {
+      const data = "Data fetched!";
+      resolve(data);
+    }, 1000);
+  });
+}
+
+async function processData(data) {
+  return new Promise((resolve, reject) => {
+    // Simulate processing data asynchronously
+    setTimeout(() => {
+      const processedData = `${data} Processed!`;
+      resolve(processedData);
+    }, 1000);
+  });
+}
+
+async function displayData() {
+  try {
+    const data = await fetchData();
+    const processedData = await processData(data);
+    console.log("Displaying:", processedData); // Output: Displaying: Data fetched! Processed!
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+displayData();
+```
+
+### Explanation:
+
+1. **`fetchData` Function:**
+
+   - This is an asynchronous function declared with the `async` keyword, which means it returns a promise.
+   - Inside the function, a promise is created using the `Promise` constructor, which simulates fetching data asynchronously.
+   - A `setTimeout` function is used to delay the resolution of the promise by 1000 milliseconds (1 second).
+   - After the delay, the promise is resolved with the string `'Data fetched!'`.
+
+2. **`processData` Function:**
+
+   - Similar to `fetchData`, this is an asynchronous function declared with the `async` keyword.
+   - It also returns a promise.
+   - Inside the function, a promise is created using the `Promise` constructor to simulate processing data asynchronously.
+   - Again, a `setTimeout` function is used to delay the resolution of the promise by 1000 milliseconds.
+   - After the delay, the promise is resolved with the processed data, which is the original data concatenated with the string `' Processed!'`.
+
+3. **`displayData` Function:**
+
+   - This is another asynchronous function declared with the `async` keyword.
+   - Inside the function, a try-catch block is used to handle potential errors.
+   - `await` is used to wait for the promises returned by `fetchData` and `processData` to resolve.
+   - Once both promises are resolved, the processed data is logged to the console.
+
+4. **Promise Execution:**
+   - When `displayData` is called, it waits for `fetchData` to resolve using `await`.
+   - After `fetchData` resolves, it passes the fetched data to `processData` using `await`.
+   - When `processData` resolves, the processed data is obtained, and the execution continues.
+   - Any errors that occur during the execution of `fetchData`, `processData`, or during the `await` statements are caught by the catch block and logged to the console.
+
+This code demonstrates how async/await can be used to write asynchronous code in a more synchronous and readable manner in JavaScript.
+
+# ES6 Features
+
+### 1. Let and Const
+
+**Let**
+
+The `let` keyword allows you to declare block-scoped variables that can be reassigned.
+
+```javascript
+let x = 10;
+if (true) {
+  let y = 20;
+  console.log(x); // Output: 10
+  console.log(y); // Output: 20
+}
+console.log(x); // Output: 10
+console.log(y); // Error: y is not defined
+```
+
+**Const**
+
+The `const` keyword allows you to declare constants, whose values cannot be re-assigned or re-declared.
+
+```javascript
+const PI = 3.14;
+console.log(PI); // Output: 3.14
+PI = 3.14159; // Error: Assignment to constant variable
+```
+
+### 2. Arrow Functions
+
+Arrow functions provide a concise syntax for writing function expressions.
+
+```javascript
+// Regular function
+function add(a, b) {
+  return a + b;
+}
+
+// Arrow function
+const add = (a, b) => a + b;
+```
+
+```javascript
+// Single parameter, implicit return
+const greet = (name) => `Hello, ${name}!`;
+
+// Multiple parameters, explicit return
+const add = (a, b) => {
+  return a + b;
+};
+
+// No parameters, implicit return
+const getTime = () => new Date().toLocaleTimeString();
+
+// Object literal with arrow function as method
+const person = {
+  name: "Alice",
+  greet: () => {
+    console.log(`Hello, my name is ${this.name}.`); // 'this' refers to the global object, not the 'person' object
+  },
+};
+
+// Array iteration with arrow function
+const numbers = [1, 2, 3, 4, 5];
+const doubledNumbers = numbers.map((num) => num * 2);
+
+console.log(greet("John")); // Output: Hello, John!
+console.log(add(5, 3)); // Output: 8
+console.log(getTime()); // Output: Current time
+console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+person.greet(); // Output: Hello, my name is undefined.
+```
+
+### 3. Template Literals
+
+Template literals allow embedded expressions and multi-line strings.
+
+```javascript
+const name = "Alice";
+const greeting = `Hello, ${name}!
+How are you today?`;
+console.log(greeting); // output : Hello, Alice! How are you today?
+```
+
+### 4. Destructuring Assignment
+
+Destructuring assignment allows you to extract values from objects or arrays into variables.
+
+```javascript
+const person = { name: "John", age: 30 };
+const { name, age } = person;
+console.log(name); // Output: John
+console.log(age); // Output: 30
+```
+
+### 5. Spread and Rest Operators
+
+Spread and rest operators provide a convenient way to work with arrays and function arguments.
+
+```javascript
+// Spread operator
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4, 5];
+console.log(newNumbers); // Output: [1, 2, 3, 4, 5]
+
+// Rest operator
+function sum(...args) {
+  return args.reduce((total, num) => total + num, 0);
+}
+console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+```
+
+### 6. Modules
+
+Modules allow you to split your code into multiple files and import/export functionality between them.
+
+```javascript
+// math.js
+export const add = (a, b) => a + b;
+export const subtract = (a, b) => a - b;
+
+// app.js
+import { add, subtract } from "./math.js";
+console.log(add(5, 3)); // Output: 8
+console.log(subtract(5, 3)); // Output: 2
 ```
