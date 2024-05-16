@@ -1314,7 +1314,7 @@ if (result === true) {
 
 The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML document as a tree-like structure, where each node represents an element or an attribute of the document. The DOM provides a way for JavaScript to interact with and manipulate the structure, content, and style of web pages.
 
-**Example HTML Document**
+### Example HTML Document
 
 ```html
 <!DOCTYPE html>
@@ -1477,6 +1477,16 @@ const parent = document.getElementById("parent");
 parent.appendChild(textNode); // Expected Output: A new Text node with the text "New text node" is appended to the parent element
 ```
 
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/DcjNkHtDj8A/0.jpg)](https://youtu.be/DcjNkHtDj8A?si=FBSFpigDPjKyULz4)
+
+[![Video Thumbnail](https://img.youtube.com/vi/Ab6K57WjWTE/0.jpg)](https://youtu.be/Ab6K57WjWTE?si=WBgqr8611j6trmWd)
+
+[![Video Thumbnail](https://img.youtube.com/vi/xAvTgCsCHLs/0.jpg)](https://youtu.be/xAvTgCsCHLs?si=Xsb5SKnHYzGRzjx8)
+
+[![Video Thumbnail](https://img.youtube.com/vi/VQlY-X_eeTE/0.jpg)](https://youtu.be/VQlY-X_eeTE?si=iEe8Of15nyxhE4jT)
+
 # Event Handling in JavaScript
 
 Event handling in JavaScript allows you to respond to user interactions or system events in web applications. With event handling, you can execute JavaScript code in response to events such as clicks, keypresses, mouse movements, and more.
@@ -1583,6 +1593,10 @@ form.addEventListener("submit", function (event) {
 
 Event handling in JavaScript provides a wide range of events that you can use to create interactive web applications. In addition to the events mentioned above, there are many more events available such as `mouseover`, `mouseout`, `focus`, `blur`, `change`, `scroll`, and more. Experiment with different events to enhance the interactivity and functionality of your web applications.
 
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/_ALUMTa8BAE/0.jpg)](https://youtu.be/_ALUMTa8BAE?si=bBhIEVirfe8ryWME)
+
 # Asynchronous JavaScript
 
 ### setTimeout
@@ -1633,6 +1647,10 @@ function increment() {
 
 const intervalId = setInterval(increment, 1000); // Output: Count: 1, Count: 2, Count: 3, Count: 4, Count: 5
 ```
+
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/Ruq4sEw9h_8/0.jpg)](https://youtu.be/Ruq4sEw9h_8?si=0xYZLnwWirb60zhs)
 
 ### Callback Functions
 
@@ -1820,6 +1838,10 @@ displayData();
 
 This code demonstrates how async/await can be used to write asynchronous code in a more synchronous and readable manner in JavaScript.
 
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/6kE8lrqfwHo/0.jpg)](https://youtu.be/6kE8lrqfwHo?si=MFcChv5eW0HDMk-s)
+
 # ES6 Features
 
 ### 1. Let and Const
@@ -1947,3 +1969,7 @@ import { add, subtract } from "./math.js";
 console.log(add(5, 3)); // Output: 8
 console.log(subtract(5, 3)); // Output: 2
 ```
+
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/D8HyB-W7ToI/0.jpg)](https://youtu.be/D8HyB-W7ToI?si=hfK5zOvBb9SofGQn)
