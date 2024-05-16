@@ -183,15 +183,15 @@ let negativeInfinity = -Infinity;
 
 ## Resources for Data Types
 
-[![Video Thumbnail](https://img.youtube.com/vi/qpU3WIqRz9I/0.jpg)](https://youtu.be/qpU3WIqRz9I?si=LfxKqjlXMp3rxesV)
+[![Video Thumbnail](https://img.youtube.com/vi/qpU3WIqRz9I/0.jpg)](https://youtu.be/qpU3WIqRz9I?si=LfxKqjlXMp3rxesV){:target="\_blank"}
 
-### Understanding Variable Scope in JavaScript
+# Understanding Variable Scope in JavaScript
 
 ---
 
-### **let**, **var**, and **const**
+## **let**, **var**, and **const**
 
-**let**
+### let
 
 The let keyword is used to declare a variable that can be reassigned a new value. Variables declared with let have block scope, meaning they are only accessible within the block in which they are defined.
 
@@ -207,7 +207,7 @@ age = 35; // Valid: Variable can be reassigned
 console.log(name); // Error: name is not defined
 ```
 
-**var**
+### var
 
 The `var` keyword is the older way of declaring variables in JavaScript. Variables declared with `var` have function scope or global scope, depending on where they are declared. Unlike `let`, variables declared with `var` can be redeclared and reassigned within the same scope.Var have Function level scope.
 
@@ -225,7 +225,7 @@ console.log(message); // Error: message is not defined
 
 Don't know about **functions** ? we will talk about that later. For now just understand Functions in JavaScript are blocks of code that can be defined once and executed multiple times. They encapsulate a set of instructions and can accept input parameters, perform computations, and return results.
 
-**const**
+### const
 
 The `const` keyword is used to declare a constant variable, which cannot be reassigned a new value once it has been initialized. Variables declared with `const` must be initialized at the time of declaration.
 
@@ -242,11 +242,17 @@ In summary ,
 
 Remember to choose the appropriate variable declaration based on the intended use and scope of the variable in your JavaScript code.
 
-### Operators
+### Resources
+
+[![Video Thumbnail](https://img.youtube.com/vi/yY0bKZNYmJs/0.jpg)](https://youtu.be/yY0bKZNYmJs?si=zvAWn6UPObSxihUi){:target="\_blank"}
+
+# Operators
+
+---
 
 Operators in JavaScript are symbols or keywords that perform operations on operands (variables or values). They are used to perform arithmetic, comparison, logical, and assignment operations
 
-**Arithmetic Operators**
+### Arithmetic Operators
 
 Arithmetic operators are used to perform mathematical calculations.
 
@@ -268,7 +274,7 @@ console.log(a % b); // Output: 2
 console.log(a ** b); // Output: 125
 ```
 
-**Comparison Operators**
+### Comparison Operators
 
 Comparison operators are used to compare two values and return a Boolean result.
 
@@ -301,8 +307,6 @@ console.log(null == undefined);
 // Output: false
 console.log(NaN === NaN);
 
-
-
 // Output: false
 console.log("cat" > "dog");
 
@@ -316,7 +320,7 @@ console.log(0 == false);
 console.log(0 === false);
 ```
 
-# Explanation of Outputs
+### Explanation of Outputs
 
 1. **console.log("apple" == "Apple");**
 
@@ -366,19 +370,6 @@ console.log(0 === false);
 10. **console.log(0 === false);**
     - Explanation: The `===` operator performs strict equality comparison without type coercion. Since the types of the operands are different (`number` and `boolean`), they are not equal.
     - Expected Output: false
-
-### Comments
-
-Comments are used to add explanatory notes to JavaScript code. JavaScript supports both single-line and multi-line comments.
-
-```javascript
-// This is a single-line comment
-
-/*
-This is a
-multi-line comment
-*/
-```
 
 ### Logical Operators
 
@@ -454,6 +445,25 @@ console.log(x << 1); // Left Shift: 0101 << 1 = 1010 (10)
 console.log(x >> 1); // Right Shift: 0101 >> 1 = 0010 (2)
 console.log(x >>> 1); // Zero-fill Right Shift: 0101 >>> 1 = 0010 (2)
 ```
+
+### Comments
+
+Comments are used to add explanatory notes to JavaScript code. JavaScript supports both single-line and multi-line comments.
+
+```javascript
+// This is a single-line comment
+
+/*
+This is a
+multi-line comment
+*/
+```
+
+### Resources for Operators
+
+[![Video Thumbnail](https://img.youtube.com/vi/lsV8JQgSW1s/0.jpg)](https://youtu.be/lsV8JQgSW1s?si=MZ4XQUaL69VQXbzf){:target="\_blank"}
+
+[![Video Thumbnail](https://img.youtube.com/vi/mesu75PTDC8/0.jpg)](https://youtu.be/mesu75PTDC8?si=Z0Xgu8vY7LUK7zvD){:target="\_blank"}
 
 ### Conditional Statements (if-else, switch):
 
