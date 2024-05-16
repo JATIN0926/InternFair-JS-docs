@@ -183,7 +183,7 @@ let negativeInfinity = -Infinity;
 
 ## Resources for Data Types
 
-[![Video Thumbnail](https://img.youtube.com/vi/qpU3WIqRz9I&list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR&index=4/0.jpg)](<[VIDEO_URL_HERE](https://www.youtube.com/watch?v=qpU3WIqRz9I&list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR&index=4)>)
+[![Video Thumbnail](https://img.youtube.com/vi/qpU3WIqRz9I&list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR&index=4/0.jpg)](<(https://www.youtube.com/watch?v=qpU3WIqRz9I&list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR&index=4)>)
 
 ### Understanding Variable Scope in JavaScript
 
